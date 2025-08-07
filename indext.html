@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winsome Gascid | Personal Webpage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+      text-align: center;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    header {
+      padding: 20px;
+    }
+    section {
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #ffe600;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .social-links a {
+      color: #ffe600;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .carousel-container {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .slide.active {
+      display: block;
+      animation: fade 1s ease-in-out;
+    }
+    @keyframes fade {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="1.png" alt="My Avatar" class="avatar">
+    <h1>Winsome Gascid</h1>
+    <p>Welcome to my digital space — colorful, bold, and 100% me!</p>
+  </header>  <section>
+    <h2>About Me</h2>
+    <p>Hi, I'm Winsome — a dynamic individual with a passion for learning, creativity, and self-expression. Currently on an exciting journey in criminology, I believe in the power of perseverance and good vibes. I love surrounding myself with inspiring people, chasing sunsets, and working hard to build a future I'm proud of.</p>
+  </section>  <section>
+    <h2>Interests</h2>
+    <p>I’m deeply curious about how things work — especially human behavior and the justice system. Outside school, I immerse myself in tech, music, anime, photography, and digital design. I'm the type of person who enjoys exploring new places and diving into documentaries or deep conversations late at night.</p>
+  </section>  <section>
+    <h2>Hobbies</h2>
+    <p>When I’m not studying or working on projects, you’ll find me vibing with music, editing photos or videos, sketching random art, or discovering new spots to chill. Whether it's dancing alone in my room or watching the stars from the roof — I turn little moments into magic.</p>
+  </section>  <section>
+    <h2>Contact</h2>
+    <p>Let's connect! Whether you're here to say hi or collab, my inbox is always open.</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/1ahD3igcmv/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/itssome_winnn?igsh=cHNnOG94dmZsdG81" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@some_win?_t=ZS-8yfqbOohksq&_r=1" target="_blank">TikTok</a>
+      <a href="tel:09959820116">Telegram/Phone</a>
+    </div>
+  </section>  <section class="carousel-section">
+    <h2>My Highlights</h2>
+    <div class="carousel-container" onmouseover="pauseCarousel()" onmouseout="resumeCarousel()">
+      <img src="slide1.jpg" class="slide active">
+      <img src="slide2.jpg" class="slide">
+      <img src="slide3.jpg" class="slide">
+      <img src="slide4.jpg" class="slide">
+      <img src="slide5.jpg" class="slide">
+    </div>
+  </section>  <script>
+    let currentSlide = 0;
+    let slides;
+    let intervalId;
+
+    window.onload = () => {
+      slides = document.querySelectorAll('.slide');
+      startCarousel();
+    }
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+      intervalId = setInterval(nextSlide, 3000);
+    }
+
+    function pauseCarousel() {
+      clearInterval(intervalId);
+    }
+
+    function resumeCarousel() {
+      startCarousel();
+    }
+  </script></body>
+</html>
